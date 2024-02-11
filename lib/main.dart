@@ -7,66 +7,78 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+      home: Scaffold(
+        backgroundColor: const Color.fromARGB(255, 37, 145, 172),
+        appBar: AppBar(
+          elevation: 0,
+          backgroundColor: const Color.fromARGB(255, 51, 158, 168),
+          title: const Center(
+              child: Text(
+            'AL MOSROF MIA',
+            style: TextStyle(
+                fontFamily: 'Pacifico',
+                fontSize: 12,
+                fontStyle: FontStyle.normal),
+          )),
+        ),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          // crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Center(
+              child: Container(
+                height: 150,
+                width: 150,
+                color: Colors.amber,
+                child: const Center(
+                  child: Text(
+                    'I love dart',
+                    style: TextStyle(
+                        fontSize: 30,
+                        fontFamily: 'Pacifico',
+                        fontStyle: FontStyle.normal),
+                  ),
+                ),
+              ),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+            const SizedBox(
+              height: 150,
+              width: 150,
+              child: Center(
+                child: Text(
+                  'Dart Code',
+                  style: TextStyle(
+                      fontFamily: 'Pacifico',
+                      fontSize: 30,
+                      fontStyle: FontStyle.italic),
+                ),
+              ),
             ),
+            Container(
+              height: 150,
+              width: 150,
+              color: Colors.blue,
+              child: const Center(
+                child: Text(
+                  'I love flutter',
+                  style: TextStyle(
+                      fontSize: 25,
+                      fontFamily: 'Pacifico',
+                      fontStyle: FontStyle.normal),
+                ),
+              ),
+            )
           ],
         ),
+        bottomNavigationBar: const BottomAppBar(
+          color: Color.fromARGB(255, 9, 176, 120),
+          elevation: 0,
+          child: Icon(Icons.add_call),
+        ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
